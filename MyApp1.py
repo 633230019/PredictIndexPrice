@@ -25,8 +25,14 @@ x_train,x_test,y_train,y_test =train_test_split(x_poly,y,random_state=0)
 modelRegress=LinearRegression()
 modelRegress.fit(x_train,y_train)
 
-x_input=[[2,5],[2.2,5.7]]
+#x_input=[[2,5],[2.2,5.7]]
+x1=st.number_input("กรุณาป้อนข้อมูล interest_rate:")
+x2=st.number_input("กรุณาป้อนข้อมูล unemployment_rate:")
 
-y_predict=modelRegress.predict(pf.fit_transform(x_input))
-
-st.write(y_predict)
+if st.button("พยากรณ์ข้อมูล"):
+    x_input=[x1,x2]
+    y_predict=modelRegress.predict(pf.fit_transform(x_input))
+    st.write(y_predict)
+    st.button("ไม่พยากรณ์")
+else:
+    st.button("ไม่พยากรณ์")
