@@ -7,5 +7,5 @@ st.header("Index Price Prediction from NPRU")
 df=pd.read_csv("./data/stock_index_price.csv")
 st.write(df.head(10))
 
-st.write("Index Price Prediction Chart")
-st.line_chart(df)
+st.header("Prediction Chart")
+st.line_chart(df, x="interest_rate",y=["unemployment_rate","stock_index_price"])
